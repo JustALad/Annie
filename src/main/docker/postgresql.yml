@@ -1,0 +1,11 @@
+version: '2'
+services:
+  annie-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/Annie/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=Annie
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
