@@ -1,0 +1,8 @@
+/BadRequestAlertException.class
+/EmailAlreadyUsedException.class
+/ErrorConstants.class
+/ExceptionTranslator.class
+/FieldErrorVM.class
+/InvalidPasswordException.class
+/LoginAlreadyUsedException.class
+/package-info.class
