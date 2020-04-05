@@ -17,5 +17,9 @@ relationship OneToMany {
     Profile{address} to Address{profile}
 }
 
+relationship OneToOne {
+	User{profile} to Profile{user}
+}
+
 paginate Profile with pagination
 paginate Address with pagination
