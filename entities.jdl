@@ -1,25 +1,50 @@
 //
-// An entity model for an online shop
+// An entity model for the Annie Application
 //
+application {
+  config {
+    prodDatabaseType postgresql,
+  }
+}
+
 entity Profile {
-	telephone String
+    profileType ProfileTypeEnum
+}
+
+enum ProfileTypeEnum {
+    CUSTOMER,
+    VENDOR,
+    EMPLOYEE,
+    SUBCONTRACTOR
+}
+
+entity Telephone {
+  phone String
+    phoneType TelephoneTypeEnum
+}
+
+enum TelephoneTypeEnum {
+    HOME,
+    MOBILE,
+    WORK
 }
 
 entity Address {
-    address1 String,
-    address2 String,
-    city String,
-    postcode String required maxlength(10),
+    address1 String
+    address2 String
+    city String
+    postcode String required maxlength(10)
     country String required maxlength(2)
 }
 
 relationship OneToMany {
     Profile{address} to Address{profile}
+    Profile{telephone} to Telephone{profile}
 }
 
-relationship OneToOne {
-	User{profile} to Profile{user}
-}
+//relationship OneToOne {
+//  User{profile} to Profile{user}
+//}
 
 paginate Profile with pagination
 paginate Address with pagination
